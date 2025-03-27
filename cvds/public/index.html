@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="container">
+    <h1>Realizar Pago</h1>
+    <form id="pagoForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" required>
+
+        <label for="articulo">Artículo:</label>
+        <select id="articulo">
+            <option value="Teclado">Teclado - $30</option>
+            <option value="Monitor">Monitor - $200</option>
+            <option value="Laptop">Laptop - $1000</option>
+        </select>
+
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago">
+            <option value="Tarjeta">Tarjeta de Crédito</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Bitcoin">Bitcoin</option>
+        </select>
+
+        <button type="submit">Pagar</button>
+    </form>
+    <p id="mensaje"></p>
+</div>
+
+<script>
+    document.getElementById("pagoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("mensaje").innerText = "Pago procesado correctamente.";
+    });
+</script>
+</body>
+</html>
